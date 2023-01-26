@@ -25,13 +25,13 @@ namespace ProductTestAPI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return Ok("Index Method Execute Successfully");
+            return Ok("Index Method Executed Successfully");
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            await UploadImageToAzureBlob();
+            //await UploadImageToAzureBlob();
 
            // return Ok();
             return Ok(await Mediator.Send(new GetAllProductsQuery()));
