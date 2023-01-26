@@ -25,7 +25,7 @@ namespace ProductTestAPI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return Ok("Successsful");
+            return Ok("Index Method Execute Successfully");
         }
 
         [HttpGet]
@@ -33,8 +33,8 @@ namespace ProductTestAPI.Controllers
         {
             await UploadImageToAzureBlob();
 
-            return Ok();
-            //return Ok(await Mediator.Send(new GetAllProductsQuery()));
+           // return Ok();
+            return Ok(await Mediator.Send(new GetAllProductsQuery()));
         }
 
         [HttpGet("{id}")]
